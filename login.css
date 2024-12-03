@@ -1,0 +1,151 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #1A2980, #26D0CE);
+    font-family: 'Poppins', sans-serif;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-box {
+    width: 380px;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    text-align: center;
+    color: #fff;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+    background: transparent;
+    color: #fff;
+    outline: none;
+}
+
+.input-group input:focus {
+    border-bottom: 2px solid #26D0CE;
+}
+
+.input-group label {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.5);
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+.input-group input:focus ~ label,
+.input-group input:not(:placeholder-shown) ~ label {
+    top: -18px;
+    left: 0;
+    font-size: 12px;
+    color: #26D0CE;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #1A2980, #26D0CE);
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.login-btn:hover {
+    background: linear-gradient(135deg, #26D0CE, #1A2980);
+}
+
+.extra-options {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+}
+
+.extra-options a {
+    color: #26D0CE;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.extra-options a:hover {
+    color: #1A2980;
+}
+
+
+.alert-box {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    opacity: 0.95;
+    animation: fadeIn 0.5s;
+}
+
+.alert-box h3 {
+    margin: 0;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.alert-box p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.alert-box.success {
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
+
+.alert-box.error {
+    background-color: #F44336; /* Red */
+    color: white;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 0.95;
+        transform: translateY(0);
+    }
+}

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Ticket Booking</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">
+            <h1>YatraSeva</h1>
+        </div>
+        <div class="links">
+            <a href="index.html" data-aos="fade-down" data-aos-delay="100">Home</a>
+            <a href="about.html" data-aos="fade-down" data-aos-delay="200">About</a>
+            <a href="services.html" data-aos="fade-down" data-aos-delay="300">Services</a>
+            <a href="https://www.google.com/maps/@15.3609156,75.1662117,14z?entry=ttu&g_ep=EgoyMDI0MTEyNC4xIKXMDSoASAFQAw%3D%3D" 
+               target="_blank" data-aos="fade-down" data-aos-delay="400">Location</a>
+            <a href="contact.html" data-aos="fade-down" data-aos-delay="500">Contact</a>
+        </div>
+        <div class="links">
+            <a href="login.html" data-aos="zoom-in" data-aos-delay="600" class="btn">Login</a>
+            <a href="signup.html" data-aos="zoom-in" data-aos-delay="700" class="btn">Sign Up</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="content" data-aos="fade-up">
+            <h1>Your Safe Travel Journey Is Our Main Goal</h1>
+            <p>Book your bus tickets quickly and securely.</p>
+            <button onclick="scrollToForm()">Get Your Ticket</button>
+        </div>
+    </section>
+
+    <!-- Booking Form Section -->
+    <section class="form-section">
+        <div class="form-container" data-aos="fade-up">
+            <h2>Book Your Ticket</h2>
+            <form id="booking-form">
+                <div class="input-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" placeholder="Enter your name" required>
+                </div>
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                </div>
+                <div class="input-group">
+                    <label for="departure">Departure City</label>
+                    <select id="departure" required>
+                        <option value="">Select Departure City</option>
+                        <option value="Hubli">Hubli</option>
+                        <option value="Bangalore">Bangalore</option>
+                        <option value="Hyderabad">Hyderabad</option>
+                        <option value="Panaji">Panaji</option>
+                        <option value="Chennai">Chennai</option>
+                        <option value="Madurai">Madurai</option>
+                        <option value="Mysore">Mysore</option>
+                        <option value="Vijayawada">Vijayawada</option>
+                        <option value="Visakhapatnam">Visakhapatnam</option>
+                        <option value="Tirupati">Tirupati</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="destination">Destination City</label>
+                    <select id="destination" required>
+                        <option value="">Select Destination City</option>
+                        <option value="Hubli">Hubli</option>
+                        <option value="Bangalore">Bangalore</option>
+                        <option value="Hyderabad">Hyderabad</option>
+                        <option value="Panaji">Panaji</option>
+                        <option value="Chennai">Chennai</option>
+                        <option value="Madurai">Madurai</option>
+                        <option value="Mysore">Mysore</option>
+                        <option value="Vijayawada">Vijayawada</option>
+                        <option value="Visakhapatnam">Visakhapatnam</option>
+                        <option value="Tirupati">Tirupati</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="date">Travel Date</label>
+                    <input type="date" id="date" required>
+                </div>
+                <div class="input-group">
+                    <label for="seats">Number of Seats</label>
+                    <input type="number" id="seats" min="1" placeholder="Seats" required>
+                </div>
+                <div class="input-group">
+                    <label for="busType">Bus Type</label>
+                    <select id="busType" required>
+                        <option value="">Select Bus Type</option>
+                        <option value="Sleeper">Sleeper</option>
+                        <option value="Semi-Sleeper">Semi-Sleeper</option>
+                        <option value="AC">AC</option>
+                        <option value="Non-AC">Non-AC</option>
+                        <option value="Luxury">Luxury</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="travelTime">Travel Time</label>
+                    <select id="travelTime" required>
+                        <option value="">Select Travel Time</option>
+                        <option value="Morning (6 AM - 12 PM)">Morning (6 AM - 12 PM)</option>
+                        <option value="Afternoon (12 PM - 6 PM)">Afternoon (12 PM - 6 PM)</option>
+                        <option value="Evening (6 PM - 12 AM)">Evening (6 PM - 12 AM)</option>
+                        <option value="Night (12 AM - 6 AM)">Night (12 AM - 6 AM)</option>
+                    </select>
+                </div>
+                <button type="submit" class="book-btn">Book Now</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Ticket Container Section -->
+    <div id="ticket-container" style="display: none;">
+        <div class="ticket">
+            <h1>YatraSeva - Bus Ticket</h1>
+            <p><b>Name:</b> <span id="ticket-name"></span></p>
+            <p><b>Email:</b> <span id="ticket-email"></span></p>
+            <p><b>Departure:</b> <span id="ticket-departure"></span></p>
+            <p><b>Destination:</b> <span id="ticket-destination"></span></p>
+            <p><b>Date:</b> <span id="ticket-date"></span></p>
+            <p><b>Seats:</b> <span id="ticket-seats"></span></p>
+            <p><b>Bus Type:</b> <span id="ticket-busType"></span></p>
+            <p><b>Travel Time:</b> <span id="ticket-travelTime"></span></p>
+            <button onclick="window.print()">Print Ticket</button>
+        </div>
+    </div>
+</body>
+</html>
