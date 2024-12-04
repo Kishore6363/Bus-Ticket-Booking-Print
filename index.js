@@ -56,7 +56,7 @@ app.post("/login", async (req, res) => {
     }
 });
 // Define Port for Application
-const port = 5001;
+const port = 5002;
 app.listen(port, () => {
     console.log(`Server listening on port ${port}`)
 });
